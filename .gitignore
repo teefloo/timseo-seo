@@ -1,0 +1,42 @@
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Node
+node_modules/
+package-lock.json
+
+# Secrets / env
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+
+# Build / dist
+dist/
+build/
+.cache/
+.chroma/
+
+# Logs
+*.log
+logs/
+
+# Personal notes
+TODO
+NOTES
+*.local
