@@ -1,12 +1,24 @@
 ---
 name: timseo-seo
-description: "SEO system based on Timseo_'s doctrine: AI-first (Claude + Obsidian + RAG), proprietary data moats, 5 strategic queries > 100 keywords, topical authority, social signals over backlinks, GEO/AEO readiness. No paid SEO tools."
-version: 1.0.0
-platforms: [linux, macos, windows]
+description:
+  Complete SEO system based on the public doctrine of @Timseo_ — AI-first (Claude
+  + Obsidian + RAG), proprietary data moats, 5 strategic queries > 100 keywords,
+  topical authority on a winnable vertical, social signals over backlinks, GEO/AEO
+  readiness. Use when launching an SEO project, planning content strategy, building
+  a programmatic SEO site, auditing a site end-to-end, fixing cannibalization,
+  scoring LLM citability, or replacing paid SEO tools with a $20/month Claude-only
+  stack. Triggers on tasks involving keyword research, internal linking, Core Web
+  Vitals, structured data (JSON-LD), topical authority, content production with
+  AI, cannibalization detection, programmatic SEO, GEO/AEO, Search Console data
+  analysis, or technical SEO audits. Includes 10 workflows (W0-W10), 27 automation
+  patterns, 5 ready-to-use Claude prompts, and full source index (100+ posts from
+  @Timseo_). Zero paid SEO tools required.
+license: MIT
 metadata:
-  hermes:
-    tags: [seo, timseo, claude, obsidian, rag, geo, aeo, keywords, cannibalization, internal-linking, core-web-vitals, structured-data, topical-authority]
-    related_skills: [holographic-memory, software-development/plan, software-development/debugging, creative/architecture-diagram]
+  author: teeflo
+  version: '1.0.0'
+  doctrine_source: '@Timseo_ (X/Twitter, jun 2025 → aug 2026, 100+ posts)'
+  stack_cost: $20/month (Claude Code only)
 ---
 
 # Timseo_ SEO System

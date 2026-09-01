@@ -3,19 +3,25 @@
 > Système SEO complet basé sur la doctrine publique de [@Timseo_](https://x.com/Timseo_)
 > AI-first (Claude + Obsidian + RAG), 0 outils SEO payants, 20 €/mois de coût total.
 
+[![skills.sh](https://skills.sh/b/teefloo/timseo-seo)](https://skills.sh/teefloo/timseo-seo)
+
 ## 📚 Contenu du repo
 
 ```
 timseo-seo/
 ├── README.md                       # Ce fichier
-├── timseo_corpus_rapport.md        # Base de connaissances exhaustive (10 sections, 100+ posts)
-├── skill/
-│   └── SKILL.md                    # Skill Hermes prêt à déployer (~/.hermes/skills/timseo-seo/)
-├── references/
-│   └── checklist-deploiement.md    # Checklist courte copiable dans ton vault
-└── examples/
-    └── AGENTS.md                   # Template AGENTS.md pour vault Obsidian (structure Karpathy)
+├── LICENSE                         # MIT
+├── CHANGELOG.md                    # v1.0.0
+└── skills/
+    └── timseo-seo/                 # Skill (format Agent Skills spec)
+        ├── SKILL.md                # Skill principal (~23 KB, 560 lignes)
+        ├── AGENTS.md               # Template pour vault Obsidian (Karpathy raw/wiki)
+        ├── checklist-deploiement.md # Checklist courte copiable
+        └── corpus-rapport.md       # Base de connaissances exhaustive (100+ posts)
 ```
+
+> Ce repo suit la spec **Agent Skills** (open standard, [agentskills.io](https://agentskills.io)).
+> Il est listé sur [skills.sh](https://skills.sh/teefloo/timseo-seo).
 
 ## 🎯 Philosophie (résumé)
 
@@ -45,33 +51,36 @@ timseo-seo/
 
 ## 🚀 Quick start
 
-### 1. Déployer le skill dans Hermes
+### Installation via skills.sh (Vercel registry)
 
 ```bash
-# Copier le skill dans ton dossier Hermes
-mkdir -p ~/.hermes/skills/timseo-seo/{references,templates}
-cp skill/SKILL.md ~/.hermes/skills/timseo-seo/SKILL.md
-cp references/checklist-deploiement.md ~/.hermes/skills/timseo-seo/references/
-cp examples/AGENTS.md ~/.hermes/skills/timseo-seo/templates/
+# Installer le skill pour Claude Code
+npx skills add teefloo/timseo-seo -a claude-code
 
-# Le skill est auto-chargé par Hermes à la prochaine session
+# Ou pour tous les agents supportés
+npx skills add teefloo/timseo-seo --all
+
+# Sans installer, juste générer un prompt
+npx skills use teefloo/timseo-seo
 ```
 
-### 2. Setup du vault Obsidian (Karpathy)
+### Installation manuelle
+
+```bash
+git clone https://github.com/teefloo/timseo-seo.git
+cd timseo-seo
+cp -r skills/timseo-seo ~/.claude/skills/   # ou ~/.hermes/skills/
+```
+
+### Setup du vault Obsidian (Karpathy)
 
 ```bash
 mkdir -p vault/{raw,wiki}
-cp examples/AGENTS.md vault/AGENTS.md
+cp skills/timseo-seo/AGENTS.md vault/AGENTS.md
 # Adapter les instructions à ton contexte client
-```
 
-### 3. Lancer la stack
-
-```bash
-# ChromaDB (RAG)
+# Lancer ChromaDB (RAG)
 docker run -d -p 8000:8000 chromadb/chroma
-
-# Embeddings locaux
 pip install sentence-transformers
 ```
 
@@ -123,19 +132,22 @@ pip install sentence-transformers
 ## 📖 Sources
 
 - **100+ publications de @Timseo_** (juin 2025 → août 2026)
-- Index complet des posts dans `timseo_corpus_rapport.md` §9
+- Index complet des posts dans `skills/timseo-seo/corpus-rapport.md` §9
 - Compte X public : https://x.com/Timseo_
 
 ## 🛠 Maintenance
 
 - **Mise à jour doctrine** : relancer l'analyse @Timseo_ tous les 3-6 mois
-- **Versioning** : incrémenter `version` dans `SKILL.md` à chaque modification majeure
-- **Skills Hermes** : ce repo est la source de vérité, déploier via `cp -r skill/ ~/.hermes/skills/timseo-seo/`
+- **Versioning** : incrémenter `version` dans le frontmatter SKILL.md à chaque modification majeure
+- **Skills Hermes** : déployer via `cp -r skills/timseo-seo ~/.hermes/skills/`
+- **Skills Claude Code** : via `npx skills add teefloo/timseo-seo`
 
 ## 📄 License
 
-MIT — Tu peux librement réutiliser, modifier, distribuer. Crédits : [@Timseo_](https://x.com/Timseo_) pour la doctrine, Octo pour la curation.
+MIT — Tu peux librement réutiliser, modifier, distribuer.
+Doctrine : [@Timseo_](https://x.com/Timseo_)
+Curation et packaging : Octo (Hermes Agent) pour Teeflo.
 
 ---
 
-*Compilé le 1er septembre 2026 par Octo pour Teeflo. Basé sur 100+ publications de @Timseo_ couvrant juin 2025 → août 2026.*
+*Compilé le 1er septembre 2026. Basé sur 100+ publications de @Timseo_ couvrant juin 2025 → août 2026.*
